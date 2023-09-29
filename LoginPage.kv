@@ -1,4 +1,10 @@
-Question1Screen
+<LoginManager>:
+    Question1Screen:
+        name: "question1"
+    CorrectScreen:
+        name: "correct"
+    ErrorScreen:
+        name: "error"
 
 <Question1Screen>:
     BoxLayout:
@@ -6,9 +12,41 @@ Question1Screen
         Label:
             text: "What is the state fruit of Texas?"
         BoxLayout:
+            spacing: "25dp"
+            padding: "25dp"
             Button:
                 text: "Peach"
+                on_release: root.answer_question(False)
             Button:
-                text: "Peach"
+                text: "Orange"
+                on_release: root.answer_question(False)
             Button:
-                text: "Peach"
+                text: "Grapefruit"
+                on_release: root.answer_question(True)
+
+<Question2Screen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Complete the following verse: \n\n'The stars at night are big and bright,____________________"
+            size_hint: 1,7
+        TextInput:
+            id: heart
+            hint_text: "Enter remaining verse"
+        Button:
+            text: "Press Enter"
+            on_release: root.answer_question(heart.text)
+
+<CorrectScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Correct!"
+        Button:
+            text: "Next"
+
+<ErrorScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "~Wrong!"
