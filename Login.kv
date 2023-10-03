@@ -1,0 +1,27 @@
+<LoginManager>:
+    LoginScreen:
+        name: "login"
+    WelcomeScreen:
+        name: "welcome"
+    RegisterScreen:
+        name: "register"
+
+<WelcomeScreen>:
+    BoxLayout:
+        Label:
+            text: "Welcome."
+
+<LoginScreen>:
+    StackLayout:
+        Label:
+            text: "Username"
+            size_hint: .5,.5
+        Label:
+            text: "Password"
+            size_hint: .5, .5
+        TextInput:
+            id: "username"
+            size_hint: .5, .5
+        TextInput:
+            id: "password"
+            size_hint: .5, .5
