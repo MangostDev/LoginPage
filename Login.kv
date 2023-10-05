@@ -7,9 +7,18 @@
         name: "register"
 
 <WelcomeScreen>:
-    BoxLayout:
+    StackLayout:
+        padding: "20dp"
         Label:
             text: "Welcome."
+            size_hint: 1, .75
+        Label:
+            size_hint: .25, .25
+        Button:
+            text: "Log Out"
+            on_release: root.logout()
+            size_hint: .5, .25
+
 
 <RegisterScreen>:
     BoxLayout:

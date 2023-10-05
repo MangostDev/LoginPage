@@ -96,7 +96,8 @@ class RegisterScreen(Screen):
 
 
 class WelcomeScreen(Screen):
-    pass
+    def logout(self):
+        self.manager.current = "login"
 
 
 LoginApp().run()
