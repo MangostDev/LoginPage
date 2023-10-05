@@ -11,17 +11,102 @@
         Label:
             text: "Welcome."
 
+<RegisterScreen>:
+    BoxLayout:
+        Label:
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
+        StackLayout:
+            spacing: "10dp"
+            padding: "10dp"
+            Label:
+                size_hint: 1, .125
+            Label:
+                size_hint: 1, .0625
+                text: "Register a new account"
+            Label:
+                id: error
+                size_hint: 1, .0625
+            Label:
+                text: "Enter New Username"
+                size_hint: .5,.0625
+            TextInput:
+                id: username
+                size_hint: .5, .0625
+            Label:
+                text: "Enter New Password"
+                size_hint: .5, .0625
+            TextInput:
+                id: password
+                size_hint: .5, .0625
+            Label:
+                text: "Re-enter New Password"
+                size_hint: .5, .0625
+            TextInput:
+                id: reenter
+                size_hint: .5, .0625
+            Label:
+                text: "Password must contain the following: \n - Capital Letter \n - Lowercase Letter \n - Number \n - Special Character \n - Password Must be at least 8 characters in length."
+                size_hint: 1, .25
+            Label:
+                size_hint: .5, .125
+            Button:
+                text: "Register"
+                size_hint: .5, .0625
+                on_release: root.register(username.text, password.text, reenter.text)
+        Label:
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
+
 <LoginScreen>:
-    StackLayout:
+    BoxLayout:
         Label:
-            text: "Username"
-            size_hint: .5,.5
+            size_hint: .25,.5
         Label:
-            text: "Password"
-            size_hint: .5, .5
-        TextInput:
-            id: "username"
-            size_hint: .5, .5
-        TextInput:
-            id: "password"
-            size_hint: .5, .5
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
+        StackLayout:
+            spacing: "10dp"
+            padding: "10dp"
+            Label:
+                size_hint: 1,.125
+            Label:
+                text: "Enter username and password"
+                size_hint: 1, .125
+            Label:
+                text: "Username"
+                size_hint: .5,.0625
+            TextInput:
+                id: username
+                size_hint: .5, .0625
+            Label:
+                text: "Password"
+                size_hint: .5, .0625
+            TextInput:
+                id: password
+                size_hint: .5, .0625
+            Button:
+                text: "Enter"
+                size_hint: 1,.125
+                on_release: root.check(username.text, password.text)
+            Button:
+                text: "Dont have an account? Register here."
+                size_hint: 1,.0625
+                background_color: 0,0,0,0
+                on_release: root.signup()
+            Label:
+                id: error
+                size_hint: 1,.0625
+        Label:
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
+        Label:
+            size_hint: .25,.5
